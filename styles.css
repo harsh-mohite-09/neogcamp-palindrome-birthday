@@ -88,3 +88,9 @@ img {
   width: 30px;
   margin: 10px 10px;
 }
+
+.gif {
+  text-align: center;
+  display: inline-block;
+  width: 100px;
+}

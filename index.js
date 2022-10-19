@@ -1,6 +1,9 @@
 var bdayInput = document.querySelector("#dob");
 var showBtn = document.querySelector("#check-button");
 var resultDiv = document.querySelector("#output");
+var gif = document.querySelector(".gif-div");
+
+hideGif();
 
 function reverseString(str) {
   var listOfChars = str.split("");
@@ -171,7 +174,12 @@ function getPreviousPalindromeDate(date) {
   }
 }
 
-function clickHandler(e) {
+async function clickHandler(e) {
+  showGif();
+  hideOutput();
+  await delay();
+  hideGif();
+  showOutput();
   var bdayString = bdayInput.value;
 
   if (bdayString !== "") {
@@ -210,6 +218,26 @@ function clickHandler(e) {
       resultDiv.innerText = "Yay! Your birthday is palindrome!";
     }
   }
+}
+
+function showGif() {
+  gif.style.display = "block";
+}
+
+function hideGif() {
+  gif.style.display = "none";
+}
+
+function showOutput() {
+  resultDiv.style.display = "block";
+}
+
+function hideOutput() {
+  resultDiv.style.display = "none";
+}
+
+function delay() {
+  return new Promise((resolve) => setTimeout(resolve, 1000));
 }
 
 showBtn.addEventListener("click", clickHandler);
