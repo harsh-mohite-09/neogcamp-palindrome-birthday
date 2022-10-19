@@ -7,12 +7,16 @@
     <link rel="stylesheet" href="styles.css" />
     <title>Is your birthday lucky?</title>
   </head>
-  <body>
+  <body class="body">
     <div class="container">
       <h1 class="heading">Palindrome Birthday!</h1>
-      <label for="dob" class="label">Enter your date of Birth: </label>
-      <input id="dob" class="input" type="date" />
-      <button id="check-button">Show</button>
+
+      <form onsubmit="return false">
+        <label for="dob" class="label">Enter your date of Birth: </label>
+        <input id="dob" class="input" type="date" required />
+        <button id="check-button">Show</button>
+      </form>
+
       <div class="gif-div">
         <img class="gif" src="images/loading.gif" alt="" />
       </div>

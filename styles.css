@@ -94,3 +94,14 @@ img {
   display: inline-block;
   width: 100px;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: 300px;
+}

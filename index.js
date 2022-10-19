@@ -2,8 +2,10 @@ var bdayInput = document.querySelector("#dob");
 var showBtn = document.querySelector("#check-button");
 var resultDiv = document.querySelector("#output");
 var gif = document.querySelector(".gif-div");
+const body = document.querySelector(".body");
 
 hideGif();
+hideBodyGif();
 
 function reverseString(str) {
   var listOfChars = str.split("");
@@ -175,6 +177,7 @@ function getPreviousPalindromeDate(date) {
 }
 
 async function clickHandler(e) {
+  hideBodyGif();
   showGif();
   hideOutput();
   await delay();
@@ -216,6 +219,7 @@ async function clickHandler(e) {
       }
     } else {
       resultDiv.innerText = "Yay! Your birthday is palindrome!";
+      showBodyGif();
     }
   }
 }
@@ -238,6 +242,14 @@ function hideOutput() {
 
 function delay() {
   return new Promise((resolve) => setTimeout(resolve, 1000));
+}
+
+function showBodyGif() {
+  body.style.backgroundImage = "url(images/confetti.gif)";
+}
+
+function hideBodyGif() {
+  body.style.backgroundImage = "none";
 }
 
 showBtn.addEventListener("click", clickHandler);
